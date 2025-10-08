@@ -3,6 +3,7 @@ package com.example.thangnt
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -84,8 +85,8 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun updateEmptyState(isEmpty: Boolean) {
-        binding.emptyState.visibility = if (isEmpty) android.view.View.VISIBLE else android.view.View.GONE
-        binding.recyclerView.visibility = if (isEmpty) android.view.View.GONE else android.view.View.VISIBLE
+        findViewById<View>(R.id.emptyState).visibility = if (isEmpty) View.VISIBLE else View.GONE
+        findViewById<View>(R.id.recyclerView).visibility = if (isEmpty) View.GONE else View.VISIBLE
     }
     
     private fun openEditActivity(item: Item?, position: Int) {
